@@ -263,43 +263,40 @@ $(document).ready(() => {
       type: 'geojson',
       data: diff358,
     });
+    map.loadImage('data/sprite.png', (error, image) => {
+      if (error) throw error;
+      map.addImage('stripe-pattern', image);
 
-    map.addLayer({
-      id: 'diff358Shapes',
-      source: 'diff358',
-      type: 'fill',
-      layout: {
-        visibility: 'none',
-      },
-      paint: {
-        'fill-color': {
-          type: 'categorical',
-          property: 'movement',
-          stops: [
-            ['in', '#105c93'],
-            ['out', '#ffffff'],
-          ],
+      map.addLayer({
+        id: 'diff358Shapes',
+        source: 'diff358',
+        type: 'fill',
+        layout: {
+          visibility: 'none',
         },
-        'fill-opacity': 0.85,
-      },
-    });
+        paint: {
+          'fill-pattern': 'stripe-pattern',
+          'fill-opacity': 1,
+        },
+      });
 
-    map.addLayer({
-      id: 'diff358Borders',
-      source: 'diff358',
-      type: 'line',
-      layout: {
-        'line-cap': 'round',
-        'line-join': 'round',
-        visibility: 'none',
-      },
-      paint: {
-        'line-color': '#3d3d3d',
-        'line-width': {
-          stops: [[8, 4], [11, 3], [12, 2.5]],
+      map.addLayer({
+        id: 'diff358Borders',
+        source: 'diff358',
+        type: 'line',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+          visibility: 'none',
         },
-        'line-opacity': 1,
-      },
+        paint: {
+          'line-color': '#3d3d3d',
+          'line-width': {
+            stops: [[8, 4], [11, 3], [12, 2.5]],
+          },
+          'line-opacity': 1,
+        },
+      });
     });
 
     // adding oddities neighborhood
@@ -371,7 +368,6 @@ $(document).ready(() => {
     style: 'https://maps.dallasnews.com/styles.json',
     center: [-97.08208, 32.8371],
     zoom: 10,
-    sprite: '../data/sprite',
   });
 
   // disable the scroll wheel zoom
