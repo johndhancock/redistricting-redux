@@ -1,0 +1,452 @@
+{%extends 'base.html'%}
+{%import 'partials/img.html' as img%}
+
+
+{%block custom_meta%}
+<meta content="{{keywords|join(',')}}" name="keywords" />
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta content="{{shareText}}" name="description" />
+<title>{{pageTitle}}</title>
+<meta property="og:url" content="{{url}}" />
+<meta property="og:title" content="{{shareTitle}}"/>
+<meta property="og:description" content="{{shareText}}" name="description"/>
+<meta property="og:image" content="{{imgURL}}"/>
+<meta property="og:image:height" content="{{imgHeight}}"/>
+<meta property="og:image:width" content="{{imgWidth}}"/>
+<meta property="og:type" content="article" />
+<meta property="article:author" content="{{authorFBProfile}}" />
+<meta property="article:publisher" content="https://www.facebook.com/dallasmorningnews/" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{sectionTwitter}}" />
+<meta name="twitter:creator" content="@{{authorTwitter}}" />
+
+<meta name="liveFyreID" content="{{id}}" />
+
+<script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{shareTitle}}",
+        "url": "{{url}}",
+        "thumbnailUrl": "{{imgURL}}",
+        "dateCreated": "{{publishDate}}",
+        "articleSection": "{{section}}",
+        "creator": ["{{authors|join('","')|safe}}"],
+        "keywords": ["{{keywords|join('","')|safe}}"]
+      }
+</script>
+
+<meta property="og:keywords" content="{{keywords|join(',')}}"/>
+
+<meta name="news_keywords" content="{{keywords|join(',')}}"/>
+{%endblock%}
+
+
+{%block custom_head%}
+<link rel="canonical" href="{{url}}" />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+{%endblock%}
+
+
+{%block ad%}
+<script type="text/javascript" src="//www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript">
+DFP_networkId = "11222444";
+var DFPSlotSizes = window.isMobile ? [[320,50]] : [[728,90],[970,30]];
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+pbjs.que.push(function() {
+  var pageAds = { //   adUnitID: "position"
+              dfpAdPositionTop: "Top",
+              dfpAdPositionMiddle: "Top2",
+              dfpAdPositionBottom: "Top2"
+  };
+
+  for(i in pageAds){
+      var bidSlot = new Object();
+      bidSlot.code = i;
+      bidSlot.sizes = DFPSlotSizes;
+      bidSlot.bids = window.isMobile ? window.mobileBids[pageAds[i]] : window.desktopBids[pageAds[i]];
+      if(typeof bidSlot.bids != "undefined"){
+          if(typeof pbjs.addAdUnits != "undefined"){
+              pbjs.addAdUnits(bidSlot);
+          }
+          window.bidSlots[i] = bidSlot;
+      }
+  }
+});
+googletag.cmd.push(function () {
+  var DFP_sitepage = "DMN/interactives";
+  var dfpSizeMapping = googletag.sizeMapping().
+          addSize([992, 480], [[728,90],[970,30]]).
+          addSize([0, 0], [[320,50]]).
+          build();
+
+
+  var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top")
+                  .addService(googletag.pubads());
+
+
+  var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top2")
+                  .addService(googletag.pubads());
+
+
+  /*
+  var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top2")
+                  .addService(googletag.pubads());
+  */
+
+  googletag.pubads().enableAsyncRendering();
+  googletag.pubads().enableSingleRequest();
+  googletag.enableServices();
+
+});
+</script>
+{%endblock%}
+
+
+{%block content%}
+<section id="content-header">
+	{{img.jpg('redistricting-hero', 'Illustration of gavel laid over redistricting maps')}}
+</section>
+<!-- end contentHeader -->
+
+<section class="content-well clearfix">
+
+	<header id="story-head">
+		<h1>Redistricting redux</h1>
+		<h2 style="letter-spacing: -1px;">Supreme Court to hear arguments in 7-year-old Texas gerrymandering case</h2>
+	</header>
+		<!-- end storyHead -->
+
+    <div class="byline-block">
+        <p>By <a target="_blank" href="https://www.dallasnews.com/author/james-barragan">James Barragán</a> | Staff Writer</p>
+        <p>Published April 20, 2018</p>
+    </div>
+    <!-- end bylineBlock -->
+
+	<div class="shareComments shareCommentsTop">
+		<ul id="share-bar1"></ul>
+	</div>
+	<!-- end shareComments -->
+
+  <p>Next week, the U.S. Supreme Court will hear a case to determine whether Texas needs to draw new electoral maps to give minority voters an equal voice. </p>
+
+  <p>But why should the average voter in North Texas care? Experts say the outcome could dramatically change state politics and perhaps create an opening for Democrats to win more seats in the Texas House and in Congress. </p>
+
+  <p>But if one expert deems the 7-year-old case “the most complex redistricting contest I’ve ever been involved in,” how are you supposed to follow it?</p>
+
+  <p>This graphic representation breaks down how the Dallas-Fort Worth area could be affected. </p>
+
+  <p class="subhead">What parts of the state are being challenged?</p>
+
+  <p>Last August, a federal district court in San Antonio ruled that <a href="https://www.dallasnews.com/news/politics/2017/08/25/texas-plans-challenge-invalidated-congressional-districts-supreme-court">two congressional districts</a> and <a href="https://www.dallasnews.com/news/politics/2017/08/24/federal-court-rules-texas-statehouse-maps-intentionally-discriminatory-orders-districts-redrawn">nine statehouse districts</a>, five in Dallas-Fort Worth (below), were drawn with the intent to discriminate against African-American and Hispanic voters.</p>
+
+    <div id="hd-top5" class="graphic clearfix">
+      <div class="hd__countygroup grid grid--three-up" id="hd__dallas">
+        <h6 class="grid__label">Dallas County</h6>
+        <div class="hd__imagegroup">
+          <p>HD 103</p>
+          <img class="circle-mug" src="images/_anchia.jpg" alt="Rafael Anchia"/>
+          <h6>Rafael Anchia</h6>
+          <p>D-Dallas</p>
+        </div>
+        <div class="hd__imagegroup">
+          <p>HD 104</p>
+          <img class="circle-mug" src="images/_alonzo.jpg" alt="Roberto Alonzo"/>
+          <h6>Roberto Alonzo</h6>
+          <p>D-Dallas</p>
+        </div>
+        <div class="hd__imagegroup">
+          <p>HD 105</p>
+          <img class="circle-mug" src="images/_anderson.jpg" alt="Rodney Anderson"/>
+          <h6>Rodney Anderson</h6>
+          <p>R-Grand Prairie</p>
+        </div>
+      </div>
+
+      <div class="hd__countygroup grid grid--three-up" id="hd__fortworth">
+        <h6 class="grid__label">Tarrant County</h6>
+        <div class="hd__imagegroup">
+          <p>HD 90</p>
+          <img class="circle-mug" src="images/_romero.jpg" alt="Ramon Romero"/>
+          <h6>Ramon Romero</h6>
+          <p>D-Fort Worth</p>
+        </div>
+        <div class="hd__imagegroup">
+          <p>HD 93</p>
+          <img class="circle-mug" src="images/_krause.jpg" alt="Matt Krause"/>
+          <h6>Matt<br />Krause</h6>
+          <p>R-Fort Worth</p>
+        </div>
+      </div>
+    </div>
+
+    <p>Redrawing the Dallas County districts could redistribute the Hispanic population, meaning more districts would have a high number of Hispanic voters. And because Hispanics tend to vote for Democrats, it could lead to more Democrats elected to the Texas House. </p>
+
+    <p>The court gave the state three days to decide whether to call a special legislative session to redraw the districts. </p>
+
+    <p>Instead, Texas Attorney General <a href="https://www.dallasnews.com/news/politics/2017/10/17/paxton-asks-supreme-court-take-texas-redistricting-case">Ken Paxton appealed to the U.S. Supreme Court, asking it to block the lower court’s ruling</a>. In January, the <a href="https://www.dallasnews.com/news/politics/2018/01/12/supreme-court-will-take-texas-redistricting-case">Supreme Court agreed to hear the case</a>.</p>
+
+    <p class="subhead">How did we get here?</p>
+
+    <p>The fight over these maps goes back seven years, when the plaintiffs in the case — which include minority lawmakers and civil rights organizations — alleged the maps the state Legislature approved in 2011 were gerrymandered to discriminate against minorities and keep Anglo incumbents in power.</p>
+
+    <div class="map-box graphic">
+      <h5>Dallas County House Districts</h5>
+      <p class="chatter">The map below shows each House District in Dallas County, color-coded by race with the highest percentage of voting age population (VAP) in each district. Click on a district to see a breakdown of voting age population by race:</p>
+      <div class="map__legend">
+        <p><strong>Race with highest percentage VAP:</strong></p>
+        <span class="legend--anglo">Anglo</span>
+        <span class="legend--hispanic">Hispanic</span>
+        <span class="legend--black">Black</span> </div>
+      <div id="all-283-map"></div>
+      <p class="source">Source: Texas Legislative Council, 2010 Census</p>
+    </div>
+
+    <p>The state’s population had grown since 2000 by 4 million people, most of whom were racial and ethnic minorities. </p>
+
+    <p>The map’s challengers argue that the Republican-led Legislature resisted creating any districts where minorities could elect candidates of their choice — most likely Democrats.</p>
+
+    <p>Under the 2011 maps, Anglo voters had a chance to elect the candidates of their choice in eight of Dallas County’s 14 statehouse seats — nearly 60 percent — even though they made up only one-third of its population. </p>
+
+    {%include "adblock1.html" %}
+
+  </section>
+
+  <section id="scroller">
+    <div id="map-container">
+      <h6 class="year__label">Map year: <span id="map__year">2011</span></h6>
+      <div class="map__legend" id="scroller__legend">
+        <div class="map__legend"><strong>Race with highest percentage voting age population:</strong><br /> <span class="legend--anglo">Anglo</span><span class="legend--hispanic">Hispanic</span><span class="legend--black">Black</span> </div>
+      </div>
+      <!-- <div id="info"></div> -->
+      <div id="map"></div>
+      <p class="source" style="padding-left: 10px;">Source: Texas Legislative Council, City of Fort Worth</p>
+    </div>
+    <div class="scroller__slide" data-slide="0">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <h5>Packing</h5>
+          <p>In a ruling last year, the San Antonio court said lawmakers in 2011 created two overpopulated districts in 103 and 104, “packing” them with Hispanics to dilute their impact in elections in surrounding districts. Instead, the population was large enough to make District 105 an additional minority-majority district.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="1">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>The court pointed to an “HD 103 <span class="label-indicator">arm</span>” that reached west into 105, which scooped up heavily concentrated Hispanic populations in Irving, and a “jagged, bizarrely shaped”  <span class="label-indicator">protrusion</span> that took “disproportionately Anglo” populations from 104 and added them to 105 to make sure it had more Anglos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="2">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>The maps’ challengers contended that 105 was on track to becoming a minority-majority district because of its Hispanic growth and because it came within 19 votes of electing the minority-preferred candidate in 2008, but the Legislature’s map redrawing in 2011 diluted minority voting strength. (Individual shading indicates race with highest percentage of voting age population by census block.)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>The San Antonio court sided with them, ruling that the “bizarre” shapes of House Districts 103, 104 and 105 were the result of an intent to discriminate against minority voters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="3">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <h5>‘Naked’ confession</h5>
+          <p>The Legislature also changed House District 90 in Tarrant County in 2011, removing the <span class="label-indicator">Como neighborhood</span>, a high-turnout African-American enclave that had supported incumbent Lon Burnam.</p>
+          <p>In the following year’s Democratic primary, Burnam, who is white, narrowly defeated a Hispanic challenger. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="4">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>In 2013, Burnam proposed bringing <span class="label-indicator">Como</span> back into his district to help him beat a potential Hispanic challenger. But because House leaders wanted to keep it a minority-majority district — 50.1 percent Hispanic — Burnam had to swap neighborhood blocks in and out of the district based solely on race to meet the racial threshold.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>Those swaps gave Hispanic voters only a slight majority, so Burnam was confident African-American voters in Como would put him over the edge. They didn’t. He lost to Ramon Romero in 2014, even with Como back in his district.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>While proposing his changes, Burnam told colleagues the redrawn district would “take the African-American and Hispanic population” out of Rep. Charlie Geren’s District 99 and put “some of my Anglo population into his district.” </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>The San Antonio court called that statement “as naked a confession as there can be to moving voters into and out of districts purely on the basis of race.” It sided with the maps’ challengers, ruling that the state had “no compelling government interest” to justify setting a Hispanic voter threshold and that District 90 was an example of racial gerrymandering.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="5">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>Though the San Antonio court ruled that District 93 in Tarrant County must be redrawn, the state does not mention it in its briefs to the Supreme Court. The state’s lawyers say if they can convince the court that the drawing of District 90 was legal, they hope District 93 will also be upheld.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="6">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <h5>Interim map</h5>
+          <p>As initial legal battles raged, the U.S. Supreme Court directed the San Antonio court to draw an “interim map” in 2012, changing only the districts that were the most egregious, so the state could have a map in place for that year’s election cycle. With those restrictions in place, the San Antonio court left 122 of the 150 districts exactly as the Legislature had drawn them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide" data-slide="7">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <h5>Dawn of current maps</h5>
+          <p>The Texas Legislature met during a special session in 2013 to adopt the court’s interim maps permanently. Lawmakers made minor changes to District 103, <span class="label-indicator">adding</span> one area and <span class="label-indicator">removing</span> another, and didn’t change Districts 104 and 105 at all.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide">
+      <div class="scroller__content-container">
+        <div class="scroller__content">
+          <p>The federal district court ruled last year that those minor changes weren’t enough to remedy the problems in the 2011 maps, and that lawmakers effectively passed on an opportunity to fix discriminatory problems, so more districts — including the three in Dallas County — need to be redrawn.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller__slide">
+      <div class="scroller__content-container">
+      </div>
+    </div>
+
+    {%include "adblock2.html" %}
+
+    <p class="subhead">The final word from both sides</p>
+
+    <p>The state argues that lawmakers changed the 2011 maps according to what the San Antonio court wanted but now is being punished under a “once-bitten-forever-damned mentality.” And by declaring parts of the 2013 maps unconstitutional, the state argues, the court has essentially blocked the use of those maps for elections even though lawmakers believe they’ve fixed them.</p>
+
+    <p>The maps’ challengers say that the state is “not telling the whole truth” when it claims lawmakers enacted the court’s interim maps because they “wanted to bring the litigation to an end.” </p>
+
+    <p>The truth, the challengers say, is that the state passed the slightly modified maps in 2013 because lawmakers wanted to keep as many of the 2011 districts in place as possible and are now trying to “[leave] the court at halftime and asking the referees to declare [the state] the winner.”</p>
+
+    <p>In the end, the Supreme Court’s decision will likely come down to which side can convince the justices that their interpretation of the district court’s action in 2012 is correct. </p>
+
+    <p>Was it that, as the challengers say, the maps were so bad that they needed an immediate interim remedy in 2012 to tackle the districts that were obviously flawed, but the door was left open to revisit the maps later? </p>
+
+    <p>Or, as the state says, did the district court essentially give its blessing to the districts it didn’t change much in 2012 — including those in Dallas County — and is now trying to interfere in districts it had already deemed legal? </p>
+
+    <div class="subscribe-cta">
+      <h4>Looking for more great coverage of Texas politics?</h4>
+      <p>If you enjoy in-depth explanining such as this, please consider supporting dallasnews.com by subscribing today.</p>
+      <a href="https://join.dallasnews.com/subscribe">Subscribe now</a>
+    </div>
+
+    <p class="subhead">What could the Supreme Court do?</p>
+
+    <p>The court is expected to rule in June. It’s difficult to predict what it may decide, but here are some scenarios.</p>
+
+    <p><span class="outcome">Outcome No. 1: The justices side with the state</span> The San Antonio court’s order to redraw would be vacated, leaving the current maps in place.</p>
+
+    <p><span class="outcome">Outcome No. 2: The justices side with the map’s challengers </span> The case would go back to the San Antonio court, where the two sides would create more districts with higher representation for minorities. That could lead to substantially different maps in Dallas-Fort Worth and across the state. The San Antonio court would also determine whether Texas should be placed back under federal government supervision for any changes made to state election laws.</p>
+
+    <p><span class="outcome">Outcome No. 3: The justices rule it’s out of their jurisdiction</span> The Supreme Court could send the case back to San Antonio because — despite the state’s argument that the order is in essence an injunction — the court hasn’t blocked the use of the current maps yet. Then the case could play out in much the same way as if the Supreme Court had sided with maps’ challengers, and the state could again appeal to the Supreme Court if the court formally blocks the maps.</p>
+
+    <p class="twitter-tag">Follow James Barragán on Twitter at <a href="https://twitter.com/James_Barragan">@James_Barragan.</a></p>
+
+
+    <section class="credits clearfix">
+        <p>Author: <a href="mailto:jbarragan@dallasnews.com">James Barragán</a></p>
+        <p>Editor: <a href="mailto:jdhancock@dallasnews.com">Jamie Hancock</a></p>
+        <p>Copy Editor: <a href="mailto:nvisser@dallasnews.com">Nancy Visser</a></p>
+        <p>Illustration: <a href="mailto:mhogue@dallasnews.com">Michael Hogue</a></p>
+        <p>Graphics: <a href="mailto:jhancock@dallasnews.com">John Hancock</a></p>
+    </section>
+	<!-- end credits -->
+
+	<section class="more clearfix">
+		<h5>Read more from The Dallas Morning News</h5>
+		<a class="clearfix" href="https://interactives.dallasnews.com/2018/mlk-blvd/">
+			<img src="images/_mlk.jpg" alt="Martin Luther King Boulevard" />
+			<h6>A mile on MLK</h6>
+			<p>Martin Luther King Boulevard embodies South Dallas’ decline and the struggle to rise above it.</p>
+		</a>
+    <a class="clearfix" href="https://interactives.dallasnews.com/2018/standoff/">
+			<img src="images/_standoff.jpg" alt="Dallas SWAT illustration" />
+			<h6>Standoff</h6>
+			<p>How the Dallas SWAT team cornered and killed the July 7 police shooter.</p>
+		</a>
+		<a class="clearfix" href="https://interactives.dallasnews.com/2017/unresponsive/">
+			<img src="images/_unresponsive.jpg" alt="Unresponsive illustration by Michael Hogue" />
+			<h6>Unresponsive</h6>
+			<p>More women are going to jail in need of drug and alcohol treatment. Help often comes too late.</p>
+		</a>
+	</section>
+	<!-- end more -->
+
+
+    <div class="shareComments">
+        <div id="comments"></div>
+	</div>
+	<!-- end shareComments -->
+
+
+</section>
+<!-- end contentWell -->
+{%endblock%}
+
+
+
+
+{%block custom_foot%}
+	<script type="text/javascript"></script>
+{%endblock%}
+
+
+
+
+
+{%block custom_social_meta%}
+<script type="text/javascript">
+  var storyTitle = "{{tweetText}}", // headline in tweet card
+	storyURL = "{{url}}",
+	leadText = "{{shareText}}", //description in tweet card
+	storyIMG = "{{imgURL}}",
+	storyAuthor = "{% for author in authors %}{{author}}{{', ' if not loop.last}}{% endfor %}",
+	twitterTag = "{{sectionTwitter}}",
+	comments = true,
+	share = true;
+	OAS_sitepage = 'www.dallasnews.com/{{desk}}/{{section}}/';
+</script>
+{%endblock%}

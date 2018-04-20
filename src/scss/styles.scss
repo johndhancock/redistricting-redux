@@ -1,0 +1,440 @@
+  /*                       */
+ /* Default style imports */
+/*                       */
+
+@import 'base';
+
+
+// Should get Hancock to embed these in base, at some point:
+
+@import 'header';
+@import 'footer';
+
+/*
+--------------------------------------------------------------------------------
+GRAPHIC STYLES
+--------------------------------------------------------------------------------
+*/
+
+#hd-top5 {
+  max-width: 650px;
+  margin: 2.4rem auto 2.4rem;
+  img {
+    width: 100%;
+  }
+  h6 {
+    margin-bottom: .3rem;
+  }
+}
+
+.graphic {
+  font-family: $sans;
+  h5, h6 {
+    font-weight: 700;
+  }
+}
+
+.circle-mug {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.hd__imagegroup {
+  width: 30%;
+  margin-right: 5%;
+  float: left;
+  text-align: center;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  p {
+    @include type(1.2rem, 1.5rem, .6rem);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+.hd__countygroup {
+  width: 47%;
+  margin-right: 6%;
+  float: left;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.graphic {
+  width: 100%;
+  max-width: 1000px;
+  margin: 4.8rem auto;
+  h6 {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.chatter {
+  @include type(1.4rem, 1.8rem, 1.2rem);
+}
+
+.source {
+  @include type(1.2rem, 1.5rem, 0);
+  clear: both;
+}
+
+.outcome {
+  font-family: $sans;
+  font-weight: 700;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .hd__imagegroup {
+    h6 {
+      @include type(1.4rem, 1.8rem, 0);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .hd__countygroup {
+    width: 100%;
+    float: none;
+    max-width: 300px;
+  }
+  .hd__imagegroup {
+    margin-bottom: 2.4rem;
+  }
+}
+
+
+
+/*
+--------------------------------------------------------------------------------
+MAP STYLES
+--------------------------------------------------------------------------------
+*/
+
+.map-box {
+  width: 100%;
+  max-width: 650px;
+  margin: 4.8rem auto;
+  position: relative;
+}
+#all-283-map {
+  width: 100%;
+  height: 400px;
+}
+
+#map-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  .year__label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    font-weight: 700;
+    padding: 5px;
+    background-color: rgba(white, .5);
+  }
+}
+#map {
+  width: 100%;
+  height: 100vh;
+}
+.marker {
+  font-family: $sans;
+  font-weight: 700;
+  background-color: $black33;
+  color: white;
+  padding: 3px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.no-show {
+  display: none;
+}
+
+#info {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  min-height: 100px;
+  font-size: 1.6rem;
+}
+
+#legend283 {
+  position: relative;
+}
+
+.map__legend {
+  @include type(1.2rem, 1.5rem, 0);
+  margin-bottom: 1.2rem;
+  h6 {
+    font-weight: 700;
+  }
+  p {
+    margin-bottom: .6rem;
+  }
+  span {
+    display: inline-block;
+    position: relative;
+    padding-left: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: .3rem;
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+    &:before {
+      @include psuedoElement(1.2rem, 1.2rem, absolute);
+      left: 0;
+      top: .3rem;
+    }
+  }
+ .legend--anglo:before {
+    background-color: rgba(#e34e36, .65);
+  }
+  .legend--black:before {
+    background-color: rgba(#ddca86, .65);
+  }
+  .legend--hispanic:before  {
+    background-color: rgba(#329ce8, .65);
+  }
+}
+
+#scroller__legend {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 10;
+  background-color: rgba(white, .95);
+  margin-bottom: 0 !important;
+  max-width: 150px;
+  h6 span:first-of-type {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  strong {
+    margin-bottom: 0.6rem;
+    display: inline-block;
+  }
+  span {
+    margin-left: 0;
+    display: block;
+  }
+}
+
+.inactive {
+  opacity: .25;
+}
+
+.mapboxgl-popup {
+    width: 280px;
+    font-family: $sans;
+    max-height: 500px;
+    overflow-y: auto;
+    z-index: 10;
+    pointer-events: auto;
+}
+.mapboxgl-ctrl-attrib {
+  display: none;
+}
+.mapboxgl-popup-content {
+    color: $black50;
+    padding: 10px;
+    h5 {
+      font-weight: bold;
+      margin-bottom: .3rem;
+      font-weight: bold;
+    }
+    p {
+      font-size: 11px;
+      line-height: 13px;
+      margin-bottom: .3rem;
+      padding-bottom: .3rem;
+      border-bottom: 1px solid $black235;
+    }
+    strong {
+      width: 58px;
+      display: inline-block;
+    }
+    table {
+      width: 100%;
+      td:first-of-type {
+        width: 58px;
+        font-weight: 700;
+      }
+      td:last-of-type {
+        width: calc(100% - 58px);
+      }
+    }
+}
+
+.mapboxgl-popup-close-button {
+    font-size: 2rem;
+    font-family: $sans;
+}
+.popup__bar {
+  background-color: $chartBlue;
+  display: inline-block;
+  height: 1.1rem;
+  position: relative;
+  top: .2rem;
+}
+
+
+@media (max-width: 600px) {
+  .marker {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .map__legend {
+    strong {
+      display: block;
+    }
+    span:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .mapboxgl-popup {
+    width: 90%;
+  }
+}
+
+/*
+--------------------------------------------------------------------------------
+SCROLLER STYLES
+--------------------------------------------------------------------------------
+*/
+
+#scroller {
+  position: relative;
+  padding-top: 125vh;
+  margin: 4.8rem 0;
+}
+.scroller__slide {
+  height: 125vh;
+  display: table;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.scroller__content-container {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+}
+
+.scroller__content {
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid $black235;
+  padding: 20px;
+  box-shadow: 2px 2px 4px rgba($black121, .25), -2px 2px 4px rgba($black121, .25), 2px -2px 4px rgba($black121, .25), -2px -2px 4px rgba($black121, .25);
+  h5 {
+    font-family: $serif;
+    font-weight: 700;
+  }
+  p {
+    font-family: $sans;
+    font-weight: 100;
+    @include type(1.3rem, 1.8rem, 1.8rem);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.label-indicator {
+  background-color: $black33;
+  color: white;
+  padding: 2px;
+  font-weight: 700;
+}
+
+.label--red {
+  background-color: rgba(#e34e36, .45);
+  color: $black33;
+}
+.label--orange {
+  background-color: rgba(#ff8f24, .45);
+  color: $black33;
+}
+.label--blue {
+  background-color: rgba(#329ce8, .45);
+  color: $black33;
+}
+.label--beige {
+  background-color: rgba(#ddca86, .45);
+  color: $black33;
+}
+
+
+#map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  &.locked {
+    position: fixed;
+  }
+  &.locked-bottom {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .scroller__slide {
+    height: 150vh;
+  }
+}
+
+
+.subscribe-cta {
+ padding: 2.4rem 0;
+ margin: 4.8rem auto;
+ border-top: 1px solid $black215;
+ border-bottom: 1px solid $black215;
+ max-width: 650px;
+ h4 {
+   font-weight: bold;
+ }
+ p {
+   font-family: $sans;
+   @include type(1.6rem, 2.4rem, 2.4rem);
+ }
+ a {
+   background-color: $dmnblue;
+   font-family: $sans;
+   color: white;
+   padding: 10px;
+   @include type(1.6rem, 2.4rem, 0);
+   @include transition(all, .25s, ease-out);
+   &:visited {
+     color: white;
+   }
+   &:hover {
+     background-color: darken($dmnblue, 5);
+     text-decoration: none;
+   }
+ }
+}
+
+.subscribed .subscribe-cta {
+  display: none;
+}
